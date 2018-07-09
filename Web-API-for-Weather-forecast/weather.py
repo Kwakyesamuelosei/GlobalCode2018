@@ -1,9 +1,9 @@
 import pyowm
-
+from config import API_KEY
 
 def weather_condition(country, state):
 	try:
-		owm = pyowm.OWM('5fa90c9c48d1ce4abbfe72a3ffe1d646')
+		owm = pyowm.OWM(API_KEY)
 		obs = owm.weather_at_place('{0},{1}'.format(country, state))
 		w = obs.get_weather()
 		wind = w.get_wind()
